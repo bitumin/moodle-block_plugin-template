@@ -70,6 +70,10 @@ _printf "Renaming lang files..."
 mv lang/en/block_newblock.php lang/en/block_${NEWNAME}.php
 printf "OK\n"
 
+_printf "Renaming main block class..."
+mv block_newblock.php block_${NEWNAME}.php
+printf "OK\n"
+
 _printf "Updating references within files..."
 if [ "$OS" = "Linux" ]; then
     find . -type f -exec sed -i 's/newblock/'"$NEWNAME"'/g' {} \;
